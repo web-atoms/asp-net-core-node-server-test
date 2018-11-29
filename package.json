@@ -1,6 +1,6 @@
 {
   "name": "@web-atoms/asp-net-core-node-server-test",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Test package for Node integration in ASP.NET Core NodeServices",
   "main": "index.js",
   "scripts": {
