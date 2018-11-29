@@ -1,16 +1,10 @@
 class App {
 
-    public async run(p: IParameters): Promise<IResult> {
+    public async run(p: IParameters): Promise<string> {
         try {
-            return {
-                success: true,
-                content: JSON.stringify(p)
-            };
+            return JSON.stringify(p);
         } catch (e) {
-            return {
-                success: false,
-                content: e.stack ? `${e}\r\n${e.stack}` : e.toString()
-            };
+            return e.stack ? `${e}\r\n${e.stack}` : e.toString();
         }
     }
 
@@ -32,8 +26,8 @@ export interface IResult {
 
 export default function(cb, p: IParameters): void {
     app.run(p).then((s) => {
-        cb(s.content);
+        cb(null, s);
     }).catch((e) => {
-        cb(null, e.content);
+        cb(e);
     });
 }

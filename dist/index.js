@@ -42,16 +42,10 @@ var App = /** @class */ (function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 try {
-                    return [2 /*return*/, {
-                            success: true,
-                            content: JSON.stringify(p)
-                        }];
+                    return [2 /*return*/, JSON.stringify(p)];
                 }
                 catch (e) {
-                    return [2 /*return*/, {
-                            success: false,
-                            content: e.stack ? e + "\r\n" + e.stack : e.toString()
-                        }];
+                    return [2 /*return*/, e.stack ? e + "\r\n" + e.stack : e.toString()];
                 }
                 return [2 /*return*/];
             });
@@ -62,9 +56,9 @@ var App = /** @class */ (function () {
 var app = new App();
 function default_1(cb, p) {
     app.run(p).then(function (s) {
-        cb(s.content);
+        cb(null, s);
     }).catch(function (e) {
-        cb(null, e.content);
+        cb(e);
     });
 }
 exports.default = default_1;
