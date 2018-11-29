@@ -12,4 +12,4 @@ export interface IResult {
     success: boolean;
     content: string;
 }
-export default function (p: IParameters): Promise<IResult>;
+export default function (cb: any, p: IParameters): void;

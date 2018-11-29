@@ -60,8 +60,12 @@ var App = /** @class */ (function () {
     return App;
 }());
 var app = new App();
-function default_1(p) {
-    return app.run(p);
+function default_1(cb, p) {
+    app.run(p).then(function (s) {
+        cb(s);
+    }).catch(function (e) {
+        cb(null, e);
+    });
 }
 exports.default = default_1;
 //# sourceMappingURL=index.js.map

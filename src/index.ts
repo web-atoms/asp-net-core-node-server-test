@@ -30,6 +30,10 @@ export interface IResult {
     content: string;
 }
 
-export default function(p: IParameters): Promise<IResult> {
-    return app.run(p);
+export default function(cb, p: IParameters): void {
+    app.run(p).then((s) => {
+        cb(s);
+    }).catch((e) => {
+        cb(null, e);
+    });
 }
