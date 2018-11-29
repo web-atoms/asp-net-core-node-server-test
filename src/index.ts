@@ -32,8 +32,8 @@ export interface IResult {
 
 export default function(cb, p: IParameters): void {
     app.run(p).then((s) => {
-        cb(s);
+        cb(s.content);
     }).catch((e) => {
-        cb(null, e);
+        cb(null, e.content);
     });
 }

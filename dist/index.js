@@ -62,9 +62,9 @@ var App = /** @class */ (function () {
 var app = new App();
 function default_1(cb, p) {
     app.run(p).then(function (s) {
-        cb(s);
+        cb(s.content);
     }).catch(function (e) {
-        cb(null, e);
+        cb(null, e.content);
     });
 }
 exports.default = default_1;
