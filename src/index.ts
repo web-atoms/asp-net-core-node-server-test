@@ -9,7 +9,7 @@ class App {
         } catch (e) {
             return {
                 success: false,
-                content: e.stack ? `${e}\r\n${e.stack}` : e.toString() 
+                content: e.stack ? `${e}\r\n${e.stack}` : e.toString()
             };
         }
     }
